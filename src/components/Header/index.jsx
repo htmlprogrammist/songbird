@@ -1,10 +1,14 @@
 import React from 'react'
-import './Header.css'
+import styled from 'styled-components'
 
-const Header = () => {
+const Nav = styled.nav`
+  background-color: #000;
+`
+
+function Header(props) {
   return (
     <header>
-      <nav>
+      <Nav>
         <ul>
           <li>Разминка</li>
           <li>Воробьиные</li>
@@ -13,7 +17,7 @@ const Header = () => {
           <li>Хищные птицы</li>
           <li>Морские птицы</li>
         </ul>
-      </nav>
+      </Nav>
     </header>
   )
 }
