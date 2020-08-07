@@ -1,0 +1,20 @@
+import React from 'react';
+import styled from 'styled-components'
+
+const Btn = styled.div`
+  grid-area: ctrlkey;
+  background-color: #303030;
+  border-radius: 0.5rem;
+  border: 1px solid #555555;
+  cursor: pointer;
+  padding: 1rem;
+  text-align: center;
+`
+
+const CtrlKey = () => {
+  return (
+    <Btn>Следующий вопрос</Btn>
+  );
+}
+
+export default CtrlKey;
