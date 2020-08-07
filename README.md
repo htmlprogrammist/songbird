@@ -1,2 +1,3 @@
-# songbird
- RSS Task "Songbird"
+# Songbird
+
+Songbird - викторина для распознавания птиц по их голосам
