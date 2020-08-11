@@ -11,9 +11,22 @@ const Btn = styled.div`
   text-align: center;
 `
 
-const CtrlKey = () => {
+const CtrlKey = (props) => {
+  const divStyleActive = {
+    backgroundColor: '#5cb064'
+  }
+
+  const divStyleDisabled = {
+    backgroundColor: '#3c4855'
+  }
+
   return (
-    <Btn>Следующий вопрос</Btn>
+    <Btn
+      style={(props.isActive) ? divStyleActive : divStyleDisabled}
+      onClick={props.cb}
+    >
+      {props.message}
+    </Btn>
   );
 }
 

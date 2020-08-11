@@ -2,13 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Variant = styled.li`
-  padding: 1rem;
-  border-radius: 0.5rem;
+  padding: .5rem;
+  border-radius: .5rem;
   border: 1px solid #444444;
-  margin-bottom: 0.5rem;
+  margin-bottom: .5rem;
   display: flex;
   justify-content: flex-start;
-}
+  cursor: pointer;
+
+  Variant:hover {
+    background-color: #282c34;
+  }
 
   .answers-option__checkbox {
     width: 1rem;
@@ -22,12 +26,17 @@ const Variant = styled.li`
   }
 `
 
-function Option() {
+const Option = (props) => {
+  const handleClick = props.cb;
+  const line = props.line;
+
   return (
-    <Variant>
-      <div className='options-answer__checkbox'>
+    <Variant onClick={() => {
+      handleClick(line)
+    }}>
+      <div className='options-answer__checkbox' style={props.style}>
       </div>
-      <span className='options-answer__title'>title</span>
+      <p className='options-answer__title'>props.name</p>
     </Variant>
   );
 }

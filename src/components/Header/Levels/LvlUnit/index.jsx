@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 
 const Grade = styled.li`
-  min-width: 100px;
+  width: 120px;
   margin-bottom: 0.5rem;
   padding: 0.5rem;
   text-align: center;
@@ -15,11 +15,11 @@ const Grade = styled.li`
   }
 `
 
-function LevelItem(props) {
-  if (props.isActive) {
-    return <Grade className="is-active">Активный</Grade>
+const LevelItem = (props) => {
+  if (props.level === props.number) {
+    return <Grade className='item is-active'>{props.title}</Grade>
   } else {
-    return <Grade>Пассивный</Grade>
+    return <Grade>{props.title}</Grade>
   }
 }
 

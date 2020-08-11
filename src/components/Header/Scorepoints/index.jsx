@@ -4,16 +4,16 @@ import styled from 'styled-components'
 const Score = styled.section`
   align-self: center;
   
-  .counter {
-    color: #fff;
+  .current-score-point {
+    color: #5cb064;
   }
 `
 
-function Scorepoints() {
+function Scorepoints(props) {
   return (
     <Score>
-      <span>Score: </span>
-      <span className="counter">0</span>
+      <p>Score: </p>
+      <p className="current-score-point">{props.currentScore}</p>
     </Score>
   );
 }

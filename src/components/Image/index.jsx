@@ -6,10 +6,16 @@ const Img = styled.img`
   height: 150px;
 `
 
-function Image(props) {
-  return (
-    <Img className={`${props.className}`} src={img} alt="answer-bird"/>
-  );
+const Image = (props) => {
+  if (props.isHidden) {
+    return (
+      <Img className={`${props.className} img`} src={img} alt="answer-bird"/>
+    )
+  } else {
+    return (
+      <Img className={`${props.className} img`} src={props.url} alt="answer-bird"/>
+    )
+  }
 }
 
 export default Image;

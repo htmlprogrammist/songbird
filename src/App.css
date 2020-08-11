@@ -14,8 +14,29 @@ main {
                         "ctrlkey ctrlkey";
   grid-template-rows: auto auto auto 50px;
   grid-template-columns: 1fr 1fr;
-  margin: 1rem auto;
+  margin: 0 auto;
   grid-gap: 1rem;
+}
+
+.rhap_container {
+  background-color: #282c34 !important;
+  border-radius: 0.5rem;
+  grid-area: audio;
+}
+
+.rhap_progress-indicator {
+  background-color: #77b269 !important;
+}
+
+.rhap_total-time,
+.rhap_current-time {
+  color: #77b269 !important;
+}
+
+.rhap_play-pause-button {
+  font-size: 30px !important;
+  width: 30px !important;
+  height: 30px !important;
 }
 
 @media screen and (max-width: 756px) {

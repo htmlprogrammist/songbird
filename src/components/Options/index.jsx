@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components'
 import Answer from './Answer';
+import birdsData from './../../data/birdsData';
 
-const Variants = styled.div`
+const Variants = styled.section`
   grid-area: options;
   border: 1px solid #555555;
   border-radius: 0.5rem;
@@ -17,15 +18,27 @@ const Variants = styled.div`
 `
 
 const Options = (props) => {
+  const cb = props.cb;
+
   return (
     <Variants>
       <ul className="options-list">
-        <Answer/>
-        <Answer/>
-        <Answer/>
-        <Answer/>
-        <Answer/>
-        <Answer/>
+        {
+          props.currentState.map((item, index) => {
+            const style = {
+              backgroundColor: item
+            }
+            return (
+              <Answer
+                cb={cb}
+                style={style}
+                key={birdsData[props.level][index].id}
+                name={birdsData[props.level][index].name}
+                line={'' + index}
+              />
+            )
+          })
+        }
       </ul>
     </Variants>
 

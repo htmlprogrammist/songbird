@@ -6,8 +6,6 @@ import Levels from './Levels';
 
 const Nav = styled.header`
   grid-area: header;
-  background-color: #303030;
-  border: 1px solid #555555;
   border-radius: 0.5rem;
   padding: 0 1rem;
 
@@ -23,13 +21,16 @@ const Nav = styled.header`
 `
 
 const Header = (props) => {
+  const level = props.level;
+  const currentScore = props.currentScore;
+
   return (
     <Nav>
       <nav>
         <img className="logo" src={logo} alt="logo"/>
-        <Scorepoints/>
+        <Scorepoints currentScore={currentScore}/>
       </nav>
-      <Levels/>
+      <Levels level={level}/>
     </Nav>
   )
 }
