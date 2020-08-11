@@ -36,7 +36,7 @@ const Option = (props) => {
     }}>
       <div className='options-answer__checkbox' style={props.style}>
       </div>
-      <p className='options-answer__title'>props.name</p>
+      <p className='options-answer__title'>{props.name}</p>
     </Variant>
   );
 }
