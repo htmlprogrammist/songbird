@@ -19,8 +19,10 @@ main {
 }
 
 .rhap_container {
-  background-color: #282c34 !important;
+  background-color: transparent !important;
   border-radius: 0.5rem;
+  border: none;
+  outline: none;
   grid-area: audio;
 }
 
@@ -30,7 +32,7 @@ main {
 
 .rhap_total-time,
 .rhap_current-time {
-  color: #77b269 !important;
+  color: #ffffff !important;
 }
 
 .rhap_play-pause-button {
