@@ -17,7 +17,7 @@ const CtrlKey = (props) => {
   }
 
   const divStyleDisabled = {
-    backgroundColor: '#3c4855'
+    backgroundColor: '#303030'
   }
 
   return (

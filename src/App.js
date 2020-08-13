@@ -7,7 +7,7 @@ import CtrlKey from './components/CtrlKey';
 import Header from './components/Header'
 import birdsData from './data/birdsData';
 import correctAnswer from './data/win.mp3';
-import uncorrectAnswer from './data/error.mp3';
+import wrongAnswer from './data/error.mp3';
 import victorySound from './data/winner.mp3';
 import randomizer from './utils/randomizer';
 
@@ -16,7 +16,6 @@ class App extends React.Component {
     super(props);
     this.lastDataItem = birdsData.length - 1;
     this.clickedItems = [];
-
     this.firstStateOfItems = Array(birdsData.length).fill('grey');
     this.state = {
       currentScore: 0,
@@ -37,7 +36,6 @@ class App extends React.Component {
         rightAnswer: String(randomizer(0, this.lastDataItem)),
       }, () => {
         this.clickedItems = [];
-
         this.setState({
           chosenOption: null,
           isActiveButton: false,
@@ -51,27 +49,25 @@ class App extends React.Component {
 
   makeColored = (line, color) => {
     const newStateOfItems = this.state.stateOfItems.map(el => el);
-    newStateOfItems[line] = "red";
-    (color === 'red') ? newStateOfItems[line] = "red" : newStateOfItems[line] = "green";
+    newStateOfItems[line] = "#d62c1a";
+    (color === '#d62c1a') ? newStateOfItems[line] = "#d62c1a" : newStateOfItems[line] = "#00bc8c";
     this.setState({
       stateOfItems: newStateOfItems
     })
   }
 
   checkCorrectAnswer = (line) => {
-    console.log('line', line);
-    console.log(this.clickedItems);
-
     if (this.state.chosenOption === this.state.rightAnswer) {
       this.playAudio(correctAnswer);
+      this.makeColored(line, '#00bc8c');
       this.setState({
         isActiveButton: true,
         isAnswerVisible: true,
         currentScore: this.state.currentScore + this.state.scoreIncrement,
       })
     } else {
-      this.playAudio(uncorrectAnswer);
-      this.makeColored(line, 'red');
+      this.playAudio(wrongAnswer);
+      this.makeColored(line, '#d62c1a');
       this.setState({
         scoreIncrement: this.state.scoreIncrement - 1,
       })
@@ -82,7 +78,6 @@ class App extends React.Component {
     this.setState({
       chosenOption: line,
     });
-
     if (!this.clickedItems.includes(line)) {
       this.clickedItems.push(line);
       this.setState({
@@ -112,6 +107,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log('Для проверки Extra Scope: правильный вариант:', +this.state.rightAnswer + 1);
     if (+this.state.level === birdsData.length) {
       return (
         <main>
@@ -139,8 +135,9 @@ class App extends React.Component {
           />
           <div>
             <h1>Поздравляем!</h1>
-            <p>Ты прошел викторину и набрал максимальное количество баллав</p>
+            <p>Вы прошли викторину и набрали максимальное количество баллов</p>
             <h2>Отличный результат</h2>
+            <h2>Теперь Вы знаете, кто чирикнул.</h2>
           </div>
           {this.playAudio(victorySound)}
         </main>

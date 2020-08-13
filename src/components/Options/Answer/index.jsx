@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Variant = styled.li`
-  padding: .5rem;
   border-radius: .5rem;
   border: 1px solid #444444;
   margin-bottom: .5rem;
@@ -10,11 +9,10 @@ const Variant = styled.li`
   justify-content: flex-start;
   cursor: pointer;
 
-  Variant:hover {
-    background-color: #282c34;
-  }
-
   .answers-option__checkbox {
+    position: relative;
+    top: 17px;
+    left: 8px;
     width: 1rem;
     height: 1rem;
     border-radius: 0.5rem;
@@ -34,9 +32,9 @@ const Option = (props) => {
     <Variant onClick={() => {
       handleClick(line)
     }}>
-      <div className='options-answer__checkbox' style={props.style}>
+      <div className='answers-option__checkbox' style={props.style}>
       </div>
-      <p className='options-answer__title'>{props.name}</p>
+      <p className='answers-option__title'>{props.name}</p>
     </Variant>
   );
 }
