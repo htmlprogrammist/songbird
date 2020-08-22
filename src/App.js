@@ -56,7 +56,7 @@ class App extends React.Component {
     })
   }
 
-  checkCorrectAnswer = (line) => {
+  checkRightAnswer = (line) => {
     if (this.state.chosenOption === this.state.rightAnswer) {
       this.playAudio(correctAnswer);
       this.recolor(line, '#00bc8c');
@@ -83,7 +83,7 @@ class App extends React.Component {
       this.setState({
         chosenOption: line,
       }, () => {
-        this.checkCorrectAnswer(line);
+        this.checkRightAnswer(line);
       })
     }
   }
