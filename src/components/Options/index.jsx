@@ -17,14 +17,12 @@ const Variants = styled.section`
 }
 `
 
-const Options = (props) => {
-  const cb = props.cb;
-
+const Options = ({cb, level, currentState}) => {
   return (
     <Variants>
       <ul className="options-list">
         {
-          props.currentState.map((item, index) => {
+          currentState.map((item, index) => {
             const style = {
               backgroundColor: item
             }
@@ -32,8 +30,8 @@ const Options = (props) => {
               <Answer
                 cb={cb}
                 style={style}
-                key={birdsData[props.level][index].id}
-                name={birdsData[props.level][index].name}
+                key={birdsData[level][index].id}
+                name={birdsData[level][index].name}
                 line={'' + index}
               />
             )

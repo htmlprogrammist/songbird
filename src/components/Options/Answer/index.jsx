@@ -24,17 +24,15 @@ const Variant = styled.li`
   }
 `
 
-const Option = (props) => {
-  const handleClick = props.cb;
-  const line = props.line;
+const Option = ({cb, style, name, line}) => {
 
   return (
     <Variant onClick={() => {
-      handleClick(line)
+      cb(line)
     }}>
-      <div className='answers-option__checkbox' style={props.style}>
+      <div className='answers-option__checkbox' style={style}>
       </div>
-      <p className='answers-option__title'>{props.name}</p>
+      <p className='answers-option__title'>{name}</p>
     </Variant>
   );
 }

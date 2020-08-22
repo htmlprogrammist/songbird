@@ -161,7 +161,7 @@ class App extends React.Component {
           />
           <AboutBird
             level={this.state.level}
-            choise={this.state.chosenOption}
+            choice={this.state.chosenOption}
           />
           <CtrlKey
             cb={this.nextLevel}

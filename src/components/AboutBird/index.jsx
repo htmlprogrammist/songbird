@@ -35,8 +35,8 @@ const Description = styled.section`
     align-items: center;
   }
 `
-const AboutBird = (props) => {
-  let chosenItem = props.choise || '-1';
+const AboutBird = ({level, choice}) => {
+  let chosenItem = choice || '-1';
 
   if (chosenItem === '-1') {
     return (
@@ -45,7 +45,7 @@ const AboutBird = (props) => {
       </div>
     )
   } else {
-    const {audio, image, name, species, description} = birdsData[props.level][chosenItem];
+    const {audio, image, name, species, description} = birdsData[level][chosenItem];
 
     return (
       <Description>

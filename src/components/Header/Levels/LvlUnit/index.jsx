@@ -11,11 +11,11 @@ const Grade = styled.li`
   border-radius: 0.5rem;
 `
 
-const LevelItem = (props) => {
-  if (props.level === props.number) {
-    return <Grade className='is-active'>{props.title}</Grade>
+const LevelItem = ({level, number, title}) => {
+  if (level === number) {
+    return <Grade className='is-active'>{title}</Grade>
   } else {
-    return <Grade>{props.title}</Grade>
+    return <Grade>{title}</Grade>
   }
 }
 

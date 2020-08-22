@@ -30,19 +30,17 @@ const Mystery = styled.section`
   }
 `
 
-const Question = (props) => {
-  const rightAnswer = props.rightAnswer;
-  const level = props.level;
+const Question = ({rightAnswer, level, visibility}) => {
   const {audio, image, name} = birdsData[level][rightAnswer];
 
   return (
     <Mystery>
       <Image
         className='mystery-img'
-        isHidden={(!props.visibility)}
+        isHidden={(!visibility)}
         url={image}
       />
-      <p className='mystery-title'>{(props.visibility) ? name : '********'}</p>
+      <p className='mystery-title'>{(visibility) ? name : '********'}</p>
       <AudioPlayer
         autoPlayAfterSrcChange={false}
         showJumpControls={false}
