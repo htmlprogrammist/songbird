@@ -122,7 +122,7 @@ class App extends React.Component {
           <CtrlKey
             cb={this.updateApp}
             isActive='true'
-            message='Попробовать ещё раз'
+            message='Сыграть ещё раз'
           />
         </main>
       )
@@ -139,6 +139,11 @@ class App extends React.Component {
             <h2>Отличный результат</h2>
             <h2>Теперь Вы знаете, кто чирикнул.</h2>
           </div>
+          <CtrlKey
+            cb={this.updateApp}
+            isActive='true'
+            message='Сыграть ещё раз'
+          />
           {this.playAudio(victorySound)}
         </main>
       )
