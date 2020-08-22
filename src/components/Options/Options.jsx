@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import Answer from './Answer';
+import Answer from './Answer/Answer';
 import birdsData from './../../data/birdsData';
 
 const Variants = styled.section`

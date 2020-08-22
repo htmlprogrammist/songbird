@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import levels from './../../../data/levels';
-import LvlUnit from './LvlUnit';
+import LvlUnit from './LvlUnit/LvlUnit';
 
 const LevelsList = styled.ul`
   padding: 0;

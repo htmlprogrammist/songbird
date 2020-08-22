@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Question from './components/Question';
-import Options from './components/Options';
-import AboutBird from './components/AboutBird';
-import CtrlKey from './components/CtrlKey';
-import Header from './components/Header'
+import Question from './components/Question/Question';
+import Options from './components/Options/Options';
+import AboutBird from './components/AboutBird/AboutBird';
+import CtrlKey from './components/CtrlKey/CtrlKey';
+import Header from './components/Header/Header'
 import birdsData from './data/birdsData';
 import correctAnswer from './data/win.mp3';
 import wrongAnswer from './data/error.mp3';
