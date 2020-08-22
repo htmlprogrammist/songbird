@@ -9,11 +9,11 @@ const Score = styled.section`
   }
 `
 
-function Scorepoints(props) {
+function Scorepoints({currentScore}) {
   return (
     <Score>
       <p>Score: </p>
-      <p className="current-score-point">{props.currentScore}</p>
+      <p className="current-score-point">{currentScore}</p>
     </Score>
   );
 }

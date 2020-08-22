@@ -29,7 +29,7 @@ class App extends React.Component {
     }
   }
 
-  levelUp = () => {
+  nextLevel = () => {
     if (this.state.isActiveButton) {
       this.setState({
         level: String(+this.state.level + 1),
@@ -47,7 +47,7 @@ class App extends React.Component {
     }
   }
 
-  makeColored = (line, color) => {
+  recolor = (line, color) => {
     const newStateOfItems = this.state.stateOfItems.map(el => el);
     newStateOfItems[line] = "#d62c1a";
     (color === '#d62c1a') ? newStateOfItems[line] = "#d62c1a" : newStateOfItems[line] = "#00bc8c";
@@ -59,7 +59,7 @@ class App extends React.Component {
   checkCorrectAnswer = (line) => {
     if (this.state.chosenOption === this.state.rightAnswer) {
       this.playAudio(correctAnswer);
-      this.makeColored(line, '#00bc8c');
+      this.recolor(line, '#00bc8c');
       this.setState({
         isActiveButton: true,
         isAnswerVisible: true,
@@ -67,7 +67,7 @@ class App extends React.Component {
       })
     } else {
       this.playAudio(wrongAnswer);
-      this.makeColored(line, '#d62c1a');
+      this.recolor(line, '#d62c1a');
       this.setState({
         scoreIncrement: this.state.scoreIncrement - 1,
       })
@@ -161,10 +161,10 @@ class App extends React.Component {
           />
           <AboutBird
             level={this.state.level}
-            choise={this.state.chosenOption}
+            choice={this.state.chosenOption}
           />
           <CtrlKey
-            cb={this.levelUp}
+            cb={this.nextLevel}
             isActive={this.state.isActiveButton}
             message='Перейти к следующему вопросу'
           />

@@ -20,9 +20,7 @@ const Nav = styled.header`
   }
 `
 
-const Header = (props) => {
-  const level = props.level;
-  const currentScore = props.currentScore;
+const Header = ({level, currentScore}) => {
 
   return (
     <Nav>

@@ -17,6 +17,9 @@ main {
   margin: 0 auto;
   grid-gap: 1rem;
 }
+.rhap_progress-container {
+  outline: none;
+}
 
 .rhap_container {
   background-color: transparent !important;
@@ -30,15 +33,32 @@ main {
   background-color: #77b269 !important;
 }
 
+.rhap_volume-bar-area {
+  outline: none;
+}
+
+.rhap_repeat-button {
+  outline: none;
+}
+
 .rhap_total-time,
 .rhap_current-time {
   color: #ffffff !important;
 }
 
+.rhap_volume-button {
+  outline: none;
+}
+
 .rhap_play-pause-button {
   font-size: 30px !important;
-  width: 30px !important;
+  outline: none;
   height: 30px !important;
+  width: 30px !important;
+}
+
+.is-active {
+  background-color: #5cb064 !important;
 }
 
 @media screen and (max-width: 756px) {

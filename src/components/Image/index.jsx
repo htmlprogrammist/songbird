@@ -6,14 +6,14 @@ const Img = styled.img`
   height: 150px;
 `
 
-const Image = (props) => {
-  if (props.isHidden) {
+const Image = ({isHidden, className, url}) => {
+  if (isHidden) {
     return (
-      <Img className={`${props.className} img`} src={img} alt="answer-bird"/>
+      <Img className={`${className} img`} src={img} alt="answer-bird"/>
     )
   } else {
     return (
-      <Img className={`${props.className} img`} src={props.url} alt="answer-bird"/>
+      <Img className={`${className} img`} src={url} alt="answer-bird"/>
     )
   }
 }
