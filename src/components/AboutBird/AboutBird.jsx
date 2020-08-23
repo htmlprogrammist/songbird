@@ -19,7 +19,7 @@ const Description = styled.section`
                        'info info';
   
   .description-img {
-    padding-bottom: 1rem;
+    border-radius: 10px;
     grid-area: image;
   }
   
@@ -45,8 +45,7 @@ const AboutBird = ({level, choice}) => {
       </div>
     )
   } else {
-    const {audio, image, name, species, description} = birdsData[level][chosenItem];
-
+    let {audio, image, name, species, description} = birdsData[level][chosenItem];
     return (
       <Description>
         <Image

@@ -30,7 +30,15 @@ main {
 }
 
 .rhap_progress-indicator {
-  background-color: #77b269 !important;
+  background-color: grey !important;
+}
+
+.rhap_download-progress {
+  background-color: rgb(115, 115, 115) !important;
+}
+
+.rhap_progress-filled {
+  background: linear-gradient(to right, rgb(0, 188, 140) 0%, rgb(61, 133, 140) 100%)
 }
 
 .rhap_volume-bar-area {
@@ -50,6 +58,10 @@ main {
   outline: none;
 }
 
+.rhap_volume-bar {
+  background: linear-gradient(to right, rgb(0, 188, 140) 0%, rgb(61, 133, 140) 100%) !important
+}
+
 .rhap_play-pause-button {
   font-size: 30px !important;
   outline: none;
@@ -58,7 +70,7 @@ main {
 }
 
 .is-active {
-  background-color: #5cb064 !important;
+  background-color: #00bc8c !important;
 }
 
 @media screen and (max-width: 756px) {
