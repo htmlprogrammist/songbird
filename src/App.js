@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Question from './components/Question';
-import Options from './components/Options';
-import AboutBird from './components/AboutBird';
-import CtrlKey from './components/CtrlKey';
-import Header from './components/Header'
+import Question from './components/Question/Question';
+import Options from './components/Options/Options';
+import AboutBird from './components/AboutBird/AboutBird';
+import CtrlKey from './components/CtrlKey/CtrlKey';
+import Header from './components/Header/Header'
 import birdsData from './data/birdsData';
 import correctAnswer from './data/win.mp3';
 import wrongAnswer from './data/error.mp3';
@@ -56,7 +56,7 @@ class App extends React.Component {
     })
   }
 
-  checkCorrectAnswer = (line) => {
+  checkRightAnswer = (line) => {
     if (this.state.chosenOption === this.state.rightAnswer) {
       this.playAudio(correctAnswer);
       this.recolor(line, '#00bc8c');
@@ -83,7 +83,7 @@ class App extends React.Component {
       this.setState({
         chosenOption: line,
       }, () => {
-        this.checkCorrectAnswer(line);
+        this.checkRightAnswer(line);
       })
     }
   }
@@ -122,7 +122,7 @@ class App extends React.Component {
           <CtrlKey
             cb={this.updateApp}
             isActive='true'
-            message='Попробовать ещё раз'
+            message='Сыграть ещё раз'
           />
         </main>
       )
@@ -139,6 +139,11 @@ class App extends React.Component {
             <h2>Отличный результат</h2>
             <h2>Теперь Вы знаете, кто чирикнул.</h2>
           </div>
+          <CtrlKey
+            cb={this.updateApp}
+            isActive='true'
+            message='Сыграть ещё раз'
+          />
           {this.playAudio(victorySound)}
         </main>
       )

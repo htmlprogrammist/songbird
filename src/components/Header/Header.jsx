@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import logo from "./../../assets/logo.png";
-import Scorepoints from './Scorepoints';
-import Levels from './Levels';
+import Scorepoints from './Scorepoints/Scorepoints';
+import Levels from './Levels/Levels';
 
 const Nav = styled.header`
   grid-area: header;

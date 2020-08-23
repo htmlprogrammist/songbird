@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import Image from './../Image';
+import Image from './../Image/Image';
 import birdsData from './../../data/birdsData';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
