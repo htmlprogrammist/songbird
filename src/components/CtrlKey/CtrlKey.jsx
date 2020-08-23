@@ -12,7 +12,7 @@ const Btn = styled.div`
 
 const CtrlKey = ({isActive, cb, message}) => {
   const divStyleActive = {
-    backgroundColor: '#5cb064',
+    backgroundColor: '#00bc8c',
     cursor: 'pointer'
   }
 

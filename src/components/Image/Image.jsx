@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import img from './../../assets/mystery-bird.png';
 
 const Img = styled.img`
-  height: 150px;
+  width: 150px;
 `
 
 const Image = ({isHidden, className, url}) => {

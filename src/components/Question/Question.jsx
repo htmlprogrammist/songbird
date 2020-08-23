@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Image from './../Image/Image';
 import birdsData from './../../data/birdsData';
 import AudioPlayer from 'react-h5-audio-player';
-import 'react-h5-audio-player/lib/styles.css';
 
 const Mystery = styled.section`
   grid-area: question;
@@ -13,13 +12,14 @@ const Mystery = styled.section`
   padding: 1rem;
   display: grid;
   grid-template-rows: auto auto;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: .5fr 2fr;
   grid-template-areas: 'image name'
-                       'audio audio';
+                       'image audio';
   
   .mystery-img {
-    padding-bottom: 1rem;
     grid-area: image;
+    width: 180px;
+    border-radius: 10px;
   }
 
   .mystery-title {
@@ -31,8 +31,8 @@ const Mystery = styled.section`
 `
 
 const Question = ({rightAnswer, level, visibility}) => {
-  const {audio, image, name} = birdsData[level][rightAnswer];
-
+  let { audio, image, name } = birdsData[level][rightAnswer];
+  let audioRef = React.createRef()
   return (
     <Mystery>
       <Image
@@ -43,6 +43,7 @@ const Question = ({rightAnswer, level, visibility}) => {
       <p className='mystery-title'>{(visibility) ? name : '********'}</p>
       <AudioPlayer
         autoPlayAfterSrcChange={false}
+        ref={audioRef}
         showJumpControls={false}
         src={audio}
       />

@@ -10,6 +10,7 @@ import correctAnswer from './data/win.mp3';
 import wrongAnswer from './data/error.mp3';
 import victorySound from './data/winner.mp3';
 import randomizer from './utils/randomizer';
+import 'react-h5-audio-player/lib/styles.css';
 
 class App extends React.Component {
   constructor(props) {

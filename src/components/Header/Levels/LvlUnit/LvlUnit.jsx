@@ -2,13 +2,10 @@ import React from 'react';
 import styled from 'styled-components'
 
 const Grade = styled.li`
-  width: 120px;
-  margin-bottom: 0.5rem;
+  width: 162px;
   padding: 0.5rem;
   text-align: center;
-  margin-right: 0.5rem;
-  background-color: #3d7270;
-  border-radius: 0.5rem;
+  background-color: #007c5d;
 `
 
 const LevelItem = ({level, number, title}) => {
