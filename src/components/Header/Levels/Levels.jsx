@@ -11,7 +11,6 @@ const LevelsList = styled.ul`
   list-style: none;
   justify-content: flex-start;
   align-items: center;
-  border-radius: 5px;
 `
 
 const Levels = ({level}) => {

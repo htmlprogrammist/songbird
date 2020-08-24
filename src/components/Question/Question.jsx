@@ -15,6 +15,15 @@ const Mystery = styled.section`
   grid-template-columns: .5fr 2fr;
   grid-template-areas: 'image name'
                        'image audio';
+
+  @media screen and (max-width: 768px) {
+    grid-template-areas: 'image name'
+                         'audio audio';
+
+    .mystery-img {
+      width: 110px !important;
+    }
+  }
   
   .mystery-img {
     grid-area: image;
